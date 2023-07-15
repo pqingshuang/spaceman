@@ -187,6 +187,11 @@ window.spaceman.Functions.isValidated = (pubkey: string, type: string) :boolean 
 
 window.spaceman.Functions.sendEvent = (e) => {
 }
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js").then(() => {
+      console.log("[ServiceWorker**] - Registered");
+    });
+  }
 
 beginListeningForEvents()
 document.getElementById("content").replaceChildren(loading())
